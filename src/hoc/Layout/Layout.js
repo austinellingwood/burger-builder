@@ -16,7 +16,7 @@ class Layout extends Component {
 
     toggleClickHandler = () => {
         this.setState((prevState) => {
-            return {showSideDrawer: !prevState.showSideDrawer}
+            return { showSideDrawer: !prevState.showSideDrawer }
         });
     }
     

@@ -4,8 +4,8 @@ import styles from './NavItems.module.css';
 
 const navItems = () => (
     <ul className={styles.NavItems}>
-        <NavItem link="/" active>Burger Builder</NavItem>
-        <NavItem link="/" active={false}>Checkout</NavItem>
+        <NavItem link="/" >Burger Builder</NavItem>
+        <NavItem link="/orders" >Orders</NavItem>
     </ul>
 );
 
