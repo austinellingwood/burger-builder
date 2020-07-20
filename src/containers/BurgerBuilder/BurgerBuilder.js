@@ -89,7 +89,7 @@ class BurgerBuilder extends Component {
 
     purchaseContinueHandler = () => {
         //alert('Continue');
-        this.setState({ loading: true })
+        /* this.setState({ loading: true })
         const data = {
             ingredients: this.state.ingredients,
             price: this.state.totalPrice.toFixed(2),
@@ -112,7 +112,19 @@ class BurgerBuilder extends Component {
             })
             .catch(error => {
                 this.setState({ loading: false, purchasing: false });
-            });
+            }); */
+        
+        //this.props.history.push('/checkout');
+        const queryParams = [];
+        for (let i in this.state.ingredients) {
+            queryParams.push(encodeURIComponent(i) + '=' + encodeURIComponent(this.state.ingredients[i]));
+        };
+        queryParams.push('price=' + this.state.totalPrice.toFixed(2))
+        const queryString = queryParams.join('&');
+        this.props.history.push({
+            pathname: '/checkout',
+            search: '?' + queryString
+        });
     };
 
     render() {
